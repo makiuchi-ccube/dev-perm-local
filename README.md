@@ -56,6 +56,35 @@ CityGMLの変換手順で、後工程の道路判定レイヤ取り込みで使�
 f_road_lod2
 CityGMLから変換＆投入
 
+## 3DView、APIのビルド
+
+```
+builder
+├── 3dview
+│   ├── docker-compose.yml
+│   └── Dockerfile
+└── api
+    ├── docker-compose.yml
+    └── Dockerfile
+```
+
+`builder` フォルダ下に、3DView用とAPI用のビルドコンテナがある。
+
+ビルドの手順は以下の通り。
+
+1. それぞれのコンテナファイルを、プロジェクトフォルダルートに配置
+1. プロジェクトフォルダルートに移動
+1. `docker compose up -d --build` を実行
+1. 出来上がったファイルを配置
+
+### 3DViewの配置
+
+プロジェクトルート下の `wwwroot` の下の全てを、`apache/plateau` にコピー
+
+### APIの配置
+
+1. プロジェクトルート下の `target` の下にある `developmentpermissionapi-0.0.1-SNAPSHOT.war` を `developmentpermissionapi.war` にリネーム
+1. `tomcat/webapps` にコピー
 
 ## コンテナ操作系
 
