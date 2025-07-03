@@ -4,19 +4,20 @@
 
 ### 各サーバーへのアクセス確認
 
-Apache: http://localhost/
-Tomcat: http://localhost:8080/
-GeoServer: http://localhost/geoserver/
+| サーバー | URL |
+|--------|-----|
+| Apache | http://localhost/ |
+| Tomcat | http://localhost:8080/ |
+| GeoServer | http://localhost/geoserver/ |
 
 ### オブジェクトの準備
 
-/Settings/environment_settings/create_table.sqlを実施
-
-/Settings/environment_settings/sequence.sqlを実施
+- /Settings/environment_settings/create_table.sqlを実施
+- /Settings/environment_settings/sequence.sqlを実施
 
 ### マスターデータの取り込み
 
-/Settings/ create_master_data_sheet.xlsxの各シートのデータを取り込む
+- /Settings/ create_master_data_sheet.xlsxの各シートのデータを取り込む
 
 ### 地番データの取り込み
 
