@@ -1,0 +1,47 @@
+# === Tomcat関連 ===
+tomcat/webapps/*
+# !tomcat/webapps/.gitkeep  # 空ディレクトリ保持
+tomcat/logs/*
+# !tomcat/logs/.gitkeep  # 空ディレクトリ保持
+
+# === Apache関連 ===
+apache/plateau/*
+# apache/plateau/.gitkeep  # 空ディレクトリ保持
+
+# === DB関連 ===
+**/db/data/
+**/db/init.sql  # 初期データファイルがあるなら個別に管理
+
+# === Docker関連 ===
+*.log
+*.pid
+*.bak
+*.tmp
+*.swp
+.DS_Store
+
+# docker-composeのキャッシュ・中間ファイル（オプション）
+docker-compose.override.yml
+.env
+
+# ビルド成果物（例: jarやwarなど）
+*.jar
+*.war
+target/
+
+# === OS・エディタごとの不要ファイル ===
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# JetBrains IDEs (e.g., IntelliJ, WebStorm)
+.idea/
+
+# Node.jsなどを使っている場合
+node_modules/
+dist/
+
+# 空ディレクトリ保持
+!**/.gitkeep

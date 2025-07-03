@@ -1,0 +1,44 @@
+services:
+  db:
+    image: postgis/postgis:14-3.1
+    platform: linux/amd64
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_USER: devps
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: devps_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/initdb:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+
+  tomcat:
+    image: tomcat:9.0-jdk8-openjdk
+    container_name: tomcat
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./tomcat/setenv.sh:/usr/local/tomcat/bin/setenv.sh:ro
+      - ./tomcat/webapps:/usr/local/tomcat/webapps
+      - ./tomcat/logs:/usr/local/tomcat/logs
+    depends_on:
+      - db
+
+  apache:
+    image: httpd:2.4
+    container_name: apache
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./apache/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro
+      - ./apache/plateau:/usr/local/apache2/htdocs/plateau
+    depends_on:
+      - tomcat
+
+
+volumes:
+  pgdata:
