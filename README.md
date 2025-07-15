@@ -72,20 +72,21 @@ builder
 
 ビルドの手順は以下の通り。
 
-1. それぞれのコンテナファイルを、プロジェクトフォルダルートに配置
-1. プロジェクトフォルダルートに移動
-1. apiの場合、.m2フォルダを作成する
-1. `docker compose up -d --build` を実行
-1. 出来上がったファイルを配置
+#### 3DViewのビルドとデプロイ
 
-### 3DViewの配置
+1. `builder/3dview` 下のdocker-compose.ymlとDockerfileを、開発許可申請プロジェクトフォルダルートの下の `SRC/3dview` 下にコピーする
+1. 開発許可申請プロジェクトフォルダルートの下の `SRC/3dview`に移動する
+1. `docker compose up -d --build` を実行する
+1. 開発許可申請プロジェクトフォルダルートの下の `SRC/3dview/wwwroot` の下の全てを、`apache/plateau` にコピーする
 
-プロジェクトルート下の `wwwroot` の下の全てを、`apache/plateau` にコピー
+#### APIのビルドとデプロイ
 
-### APIの配置
-
-1. プロジェクトルート下の `target` の下にある `developmentpermissionapi-0.0.1-SNAPSHOT.war` を `developmentpermissionapi.war` にリネーム
-1. `tomcat/webapps` にコピー
+1. `builder/api` 下のdocker-compose.ymlとDockerfileを、開発許可申請プロジェクトフォルダルートの下の `SRC/api` 下にコピーする
+1. 開発許可申請プロジェクトフォルダルートの下の `SRC/api`に移動する
+1. `.m2` フォルダを作成する
+1. `docker compose up -d --build` を実行する
+1. 開発許可申請プロジェクトフォルダルートの下の `SRC/api/target` の下にある `developmentpermissionapi-0.0.1-SNAPSHOT.war` を `developmentpermissionapi.war` にリネームする
+1. `tomcat/webapps` にコピーする
 
 ## コンテナ操作系
 
