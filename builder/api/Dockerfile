@@ -1,5 +1,11 @@
 FROM openjdk:18-slim
 
+# OSパッケージを最新化(イメージに脆弱性があるため)
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 # 作業ディレクトリ
 WORKDIR /app
 

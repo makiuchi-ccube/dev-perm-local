@@ -1,0 +1,41 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.12
+-- Dumped by pg_dump version 14.12
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Data for Name: m_government_user; Type: TABLE DATA; Schema: public; Owner: devps
+--
+
+COPY public.m_government_user (user_id, login_id, password, role_code, department_id, user_name) FROM stdin;
+1001	user1	1bd9a8b777a19491839036767f760783e0b454c9abd80ae61f94e5a4975c9db85240ffbe2d84bd09206e8afeccc636dd07b269376236d1da7c7608f9534146ba	2	1001	行政担当者1
+1002	user2	1bd9a8b777a19491839036767f760783e0b454c9abd80ae61f94e5a4975c9db85240ffbe2d84bd09206e8afeccc636dd07b269376236d1da7c7608f9534146ba	2	1002	行政担当者2
+1003	user3	1bd9a8b777a19491839036767f760783e0b454c9abd80ae61f94e5a4975c9db85240ffbe2d84bd09206e8afeccc636dd07b269376236d1da7c7608f9534146ba	2	1003	行政担当者3
+1004	user4	1bd9a8b777a19491839036767f760783e0b454c9abd80ae61f94e5a4975c9db85240ffbe2d84bd09206e8afeccc636dd07b269376236d1da7c7608f9534146ba	2	1004	行政担当者4
+1005	user5	1bd9a8b777a19491839036767f760783e0b454c9abd80ae61f94e5a4975c9db85240ffbe2d84bd09206e8afeccc636dd07b269376236d1da7c7608f9534146ba	2	1005	行政担当者5
+1006	user6	1bd9a8b777a19491839036767f760783e0b454c9abd80ae61f94e5a4975c9db85240ffbe2d84bd09206e8afeccc636dd07b269376236d1da7c7608f9534146ba	2	1006	行政担当者6
+1007	user7	1bd9a8b777a19491839036767f760783e0b454c9abd80ae61f94e5a4975c9db85240ffbe2d84bd09206e8afeccc636dd07b269376236d1da7c7608f9534146ba	2	1007	行政担当者7
+1008	user8	1bd9a8b777a19491839036767f760783e0b454c9abd80ae61f94e5a4975c9db85240ffbe2d84bd09206e8afeccc636dd07b269376236d1da7c7608f9534146ba	2	1008	行政担当者8
+1009	user9	1bd9a8b777a19491839036767f760783e0b454c9abd80ae61f94e5a4975c9db85240ffbe2d84bd09206e8afeccc636dd07b269376236d1da7c7608f9534146ba	2	1009	行政担当者9
+1010	user10	1bd9a8b777a19491839036767f760783e0b454c9abd80ae61f94e5a4975c9db85240ffbe2d84bd09206e8afeccc636dd07b269376236d1da7c7608f9534146ba	2	1010	行政担当者10
+1011	user11	1bd9a8b777a19491839036767f760783e0b454c9abd80ae61f94e5a4975c9db85240ffbe2d84bd09206e8afeccc636dd07b269376236d1da7c7608f9534146ba	2	1011	行政担当者11
+\.
+
+
+--
+-- PostgreSQL database dump complete
+--
+

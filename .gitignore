@@ -12,6 +12,9 @@ apache/plateau/*
 **/db/data/
 **/db/init.sql  # 初期データファイルがあるなら個別に管理
 
+# 開発申請Git
+src/development-permission/*
+
 # === Docker関連 ===
 *.log
 *.pid

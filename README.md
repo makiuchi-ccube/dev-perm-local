@@ -4,10 +4,10 @@
 
 ### 各サーバーへのアクセス確認
 
-| サーバー | URL |
-|--------|-----|
-| Apache | http://localhost/ |
-| Tomcat | http://localhost:8080/ |
+| サーバー  | URL                         |
+| --------- | --------------------------- |
+| Apache    | http://localhost/           |
+| Tomcat    | http://localhost:8080/      |
 | GeoServer | http://localhost/geoserver/ |
 
 ### オブジェクトの準備
@@ -35,14 +35,16 @@ Tomcatと同じにする
 
 ### APIのビルドと配置
 
+```bash
 echo 'export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-18.jdk/Contents/Home"' >> ~/.zprofile
-echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.zprofile\nsource ~/.zprofile
+echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.zprofile
 source ~/.zprofile
 
 sudo chmod +x mvnw
 
 クリーンビルド
 ./mvnw clean package
+```
 
 ## 環境構築手順の不明点
 
@@ -58,7 +60,7 @@ CityGMLから変換＆投入
 
 ## 3DView、APIのビルド
 
-```
+```text
 builder
 ├── 3dview
 │   ├── docker-compose.yml
@@ -72,14 +74,14 @@ builder
 
 ビルドの手順は以下の通り。
 
-#### 3DViewのビルドとデプロイ
+### 3DViewのビルドとデプロイ
 
 1. `builder/3dview` 下のdocker-compose.ymlとDockerfileを、開発許可申請プロジェクトフォルダルートの下の `SRC/3dview` 下にコピーする
 1. 開発許可申請プロジェクトフォルダルートの下の `SRC/3dview`に移動する
 1. `docker compose up -d --build` を実行する
 1. 開発許可申請プロジェクトフォルダルートの下の `SRC/3dview/wwwroot` の下の全てを、`apache/plateau` にコピーする
 
-#### APIのビルドとデプロイ
+### APIのビルドとデプロイ
 
 1. `builder/api` 下のdocker-compose.ymlとDockerfileを、開発許可申請プロジェクトフォルダルートの下の `SRC/api` 下にコピーする
 1. 開発許可申請プロジェクトフォルダルートの下の `SRC/api`に移動する
