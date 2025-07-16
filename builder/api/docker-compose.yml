@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - .:/app
+    # volumes:
+    #   - .:/app
       # - ~/.m2:/root/.m2  # Mavenローカルキャッシュの共有（高速化のため）
     command: ["./mvnw", "clean", "package", "-DskipTests"]

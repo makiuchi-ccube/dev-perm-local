@@ -4,6 +4,8 @@ FROM node:16.16.0
 # 作業ディレクトリ
 WORKDIR /app
 
+COPY . /app/
+
 # グローバルにgulp-cliをインストール
 RUN yarn global add gulp-cli
 RUN yarn add --dev gulp -W
@@ -17,3 +19,5 @@ ENV NODE_OPTIONS=--max_old_space_size=4096
 RUN yarn
 
 RUN yarn gulp release
+
+# CMD ["yarn", "start"]
