@@ -1,5 +1,6 @@
 # === Tomcat関連 ===
 tomcat/webapps/*
+!tomcat/webapps/*.war
 # !tomcat/webapps/.gitkeep  # 空ディレクトリ保持
 tomcat/logs/*
 # !tomcat/logs/.gitkeep  # 空ディレクトリ保持
@@ -31,7 +32,6 @@ docker-compose.override.yml
 
 # ビルド成果物（例: jarやwarなど）
 *.jar
-*.war
 target/
 
 # === OS・エディタごとの不要ファイル ===
