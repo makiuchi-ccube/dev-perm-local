@@ -12,6 +12,8 @@ apache/plateau/*
 **/db/data/
 **/db/init.sql  # 初期データファイルがあるなら個別に管理
 
+db/pgdata/*
+
 # 開発申請Git
 src/development-permission/*
 
