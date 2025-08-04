@@ -20,7 +20,10 @@ services:
       - "5432:5432"
 
   tomcat:
-    image: tomcat:9.0-jdk8-openjdk
+    # image: tomcat:9.0-jdk8-openjdk
+    build:
+      context: .
+      dockerfile: Dockerfile_tomcat
     container_name: tomcat
     restart: always
     ports:

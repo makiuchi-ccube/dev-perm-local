@@ -1,6 +1,7 @@
 # === Tomcat関連 ===
 tomcat/webapps/*
 !tomcat/webapps/*.war
+!tomcat/data
 # !tomcat/webapps/.gitkeep  # 空ディレクトリ保持
 tomcat/logs/*
 # !tomcat/logs/.gitkeep  # 空ディレクトリ保持

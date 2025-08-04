@@ -1,6 +1,7 @@
 services:
   frontend-builder:
     build: .
+
     tty: true
     ports:
       - 3000:3001
