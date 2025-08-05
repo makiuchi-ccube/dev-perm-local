@@ -1,11 +1,10 @@
 services:
   frontend-builder:
     build: .
-
-    tty: true
-    ports:
-      - 3000:3001
-    command: ["yarn", "start:docker"]
+    volumes:
+      - .:/app  # ビルド成果物をホストへ
+    command:
+      ["bin", "sh"]
     # ビルド後に成果物を一時退避（ホストとマウントされた ./dist に）
     # 必要に応じて `dist` の中身の確認や post-build 処理を追記してください
 
