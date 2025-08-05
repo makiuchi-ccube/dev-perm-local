@@ -77,26 +77,9 @@ builder
 ### 3DViewのビルドとデプロイ
 
 1. `builder/3dview` 下のdocker-compose.ymlとDockerfileを、開発許可申請プロジェクトフォルダルートの下の `SRC/3dview` 下にコピーする
-2. `SRC/3dview` 下の`package.json`に以下の一文を追記する
-
-```json
-{
-//中略
-"scripts": {
-    "docker-build-local": "node ./deploy/docker/create-docker-context-for-node-components.js --build --push --tag auto --local",
-    "docker-build-prod": "node ./deploy/docker/create-docker-context-for-node-components.js --build --push --tag auto",
-    "docker-build-ci": "node ./deploy/docker/create-docker-context-for-node-components.js --build",
-    "start": "pm2 start ecosystem.config.js --update-env -- --config-file devserverconfig.json",
-    // これを追加
-    "start:docker": "pm2-runtime ecosystem.config.js --update-env -- --config-file devserverconfig.json",
-    //略
-  },
-}
-```
-
-3. 開発許可申請プロジェクトフォルダルートの下の `SRC/3dview`に移動する
-4. `docker compose up -d --build` を実行する
-5. 開発許可申請プロジェクトフォルダルートの下の `SRC/3dview/wwwroot` の下の全てを、`apache/plateau` にコピーする
+1. 開発許可申請プロジェクトフォルダルートの下の `SRC/3dview`に移動する
+1. `docker compose up -d --build` を実行する
+1. 開発許可申請プロジェクトフォルダルートの下の `SRC/3dview/wwwroot` の下の全てを、`apache/plateau` にコピーする
 
 ### APIのビルドとデプロイ
 
