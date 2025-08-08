@@ -5,4 +5,4 @@ export CATALINA_HOME=/usr/local/tomcat
 export CATALINA_BASE=/usr/local/tomcat
 export GEOSERVER_DATA_DIR=/opt/data
 export GEOSERVER_LOG_LOCATION=/var/log/geoserver.log
-
+JAVA_OPTS="$JAVA_OPTS -DGEOSERVER_LOCAL_WORKSPACE_ENABLED=false"

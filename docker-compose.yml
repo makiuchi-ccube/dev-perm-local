@@ -1,9 +1,7 @@
 services:
   db:
-    # image: postgis/postgis:14-3.1
-    # platform: linux/amd64
     build:
-      context: .
+      context: db
       dockerfile: Dockerfile
     container_name: db
 
@@ -20,10 +18,9 @@ services:
       - "5432:5432"
 
   tomcat:
-    # image: tomcat:9.0-jdk8-openjdk
     build:
-      context: .
-      dockerfile: Dockerfile_tomcat
+      context: tomcat
+      dockerfile: Dockerfile
     container_name: tomcat
     restart: always
     ports:
@@ -46,7 +43,6 @@ services:
       - ./apache/plateau:/usr/local/apache2/htdocs/plateau
     depends_on:
       - tomcat
-
 
 volumes:
   pgdata:
