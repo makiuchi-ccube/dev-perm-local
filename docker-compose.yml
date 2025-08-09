@@ -4,16 +4,14 @@ services:
       context: db
       dockerfile: Dockerfile
     container_name: db
-
     restart: always
     environment:
       POSTGRES_USER: devps
       POSTGRES_PASSWORD: password
       POSTGRES_DB: devps_db
     volumes:
-      - ./db/pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
       - ./db/initdb:/docker-entrypoint-initdb.d
-      - ./db/dump:/mnt/dump
     ports:
       - "5432:5432"
 
@@ -46,3 +44,4 @@ services:
 
 volumes:
   pgdata:
+    driver: local
