@@ -52,3 +52,16 @@ dist/
 
 # 空ディレクトリ保持
 !**/.gitkeep
+
+# plateau実データ
+*.b3dm
+
+!apache/gis
+!apache/gis/3dtiles/building/data
+apache/gis/3dtiles/building/data/*.*
+
+!apache/gis/landmark/
+apache/gis/landmark/*.czml
+!apache/gis/landmark/billboard_image/
+apache/gis/landmark/billboard_image/*.*
+

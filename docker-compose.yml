@@ -39,6 +39,8 @@ services:
     volumes:
       - ./apache/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro
       - ./apache/plateau:/usr/local/apache2/htdocs/plateau
+      - ./apache/gis:/usr/local/apache2/htdocs/gis
+      - ./apache/gis/3dtiles/building:/usr/local/apache2/htdocs/building
     depends_on:
       - tomcat
 
